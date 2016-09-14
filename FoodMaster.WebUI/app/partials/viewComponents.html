@@ -1,0 +1,26 @@
+﻿<div>
+	<h2>Components</h2>
+	
+	<table class="table-fill">
+		<thead>
+			<tr>
+				<th class="text-left">Name</th>
+				<th class="text-left">Carbs</th>
+				<th class="text-left">Fat</th>
+				<th class="text-left">Fiber</th>
+				<th class="text-left">Kcal</th>
+			</tr>
+		</thead>
+		
+		<tr ng-repeat="component in components">
+			<td class="text-left">{{ component.Name }}</td>
+			<td class="text-left">{{ component.NutritionValue.Carbs }}</td>
+			<td class="text-left">{{ component.NutritionValue.Fat }}</td>
+			<td class="text-left">{{ component.NutritionValue.Fiber }}</td>
+			<td class="text-left">{{ component.NutritionValue.Kcal }}</td>
+			<td class="text-left"><li><a href="#/editcomponent/{{component.Name}}">Edit</a></li></td>
+			<td class="text-left"><li><a href ng-click="deleteComponent(component);">Delete</a></li></td>
+		</tr>
+	</table>
+
+</div>

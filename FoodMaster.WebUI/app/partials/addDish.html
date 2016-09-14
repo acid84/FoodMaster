@@ -1,0 +1,43 @@
+﻿<div>
+	<h2>Add new food court.</h2><br/>
+
+	<label>
+		Name: 
+		<input type="text" name="Name" ng-model="court.Name"/>
+	</label>
+	<br/>
+	<br/>
+
+	<label>Choose components</label>
+	<select name="components" id="components" ng-model="selectedComponent">
+		<option ng-repeat="component in components" value="{{component}}"> {{component.Name}}</option>
+	</select>
+	<br/>
+	<label>Ammount:
+		<input type="text" name="Ammount" ng-model="selectedAmmount" />
+	</label>
+
+	<br/>
+	<input type="submit" ng-click="addComponent(selectedComponent)" value="Add"/>
+	<br/>
+	<table border="1">
+		<tr>
+			<td>Name</td>
+			<td>Carbs</td>
+			<td>Fat</td>
+			<td>Fiber</td>
+			<td>Kcal</td>
+		</tr>
+		<tr ng-repeat="component in court.components">
+			<td>{{ component.Name }}</td>
+			<td>{{ component.NutritionValue.Carbs }}</td>
+			<td>{{ component.NutritionValue.Fat }}</td>
+			<td>{{ component.NutritionValue.Fiber }}</td>
+			<td>{{ component.NutritionValue.Kcal }}</td>
+		</tr>
+	</table>
+
+	<br/>
+	<br/>
+	<input type="submit" ng-click="save()" value="Save"/>
+</div>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="foodMasterApp">
+<head>
+	<title>FoodMaster</title>
+
+	<script src="http://use.edgefonts.net/source-sans-pro:n6:default.js" type="text/javascript"></script>
+
+	<link href="styles/main.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-controller="main" >
+
+<div id="wrapper">
+	<header id="top">
+		<h1 align="center">Food Master</h1>
+		<nav id="mainnav">
+			<ul>
+				<li><a href="#/addcomponent">Add Components</a></li>
+				<li><a href="#/viewcomponents">View Components</a></li>
+				<li><a href="#/adddishes">Add Dish</a></li>
+				<li><a href="#/viewdishes">View Dishes</a></li>
+				<li><a href="#/viewdishes">View/Create week</a></li>
+				<li><a href="#/about">About</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="main" ng-view></div>
+
+	<footer>
+		<p>&copy; Copyright 2016 Mikael Johansson</p>
+	</footer>
+</div>
+
+
+
+	<script src="Scripts/angular.js"></script>
+<script src="Scripts/angular-route.js"></script>
+
+	<link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/v1.0.0/dist/ng-table.min.css">
+<script src="Scripts/ng-table.js"></script>
+
+	<script src="app/Constants.js"></script>
+<script src="app/main.js"></script>
+	<script src="app/appConfig.js"></script>
+<script src="app/controllers/aboutController.js"></script>
+<script src="app/controllers/viewComponentsController.js"></script>
+<script src="app/controllers/editComponentController.js"></script>
+<script src="app/controllers/addComponentController.js"></script>
+<script src="app/controllers/addDishController.js"></script>
+	<script src="app/controllers/viewDishesController.js"></script>
+
+</body>
+</html>

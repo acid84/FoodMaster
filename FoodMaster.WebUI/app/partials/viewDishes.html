@@ -1,0 +1,14 @@
+﻿<div>
+	<h2>View dishes.</h2><br/>
+
+	<table border="1">
+		<tr>
+			<td>Name</td>
+		</tr>
+		<tr ng-repeat="dish in dishes">
+			<td>{{ dish.Name }}</td>
+			<!--<td><li><a href="not working">Edit</a></li></td>-->
+			<td><li><a href ng-click="deleteDish(dish);">Delete</a></li></td>
+		</tr>
+	</table>
+</div>

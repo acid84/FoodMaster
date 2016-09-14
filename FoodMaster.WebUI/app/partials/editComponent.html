@@ -1,0 +1,38 @@
+﻿<div>
+	<h2>{{ HeaderText }}</h2>
+
+	<form>
+		<label>
+			Name:
+			<input type="text" name="Name" ng-model="component.Name" required/>
+		</label>
+		<br/>
+
+		<label>
+			Carbs:
+			<input type="number" name="Carbs" ng-model="component.NutritionValue.Carbs" required />
+		</label>
+		<br/>
+
+		<label>
+			Fat:
+			<input type="number" name="Fat" ng-model="component.NutritionValue.Fat" required />
+		</label>
+		<br/>
+
+		<label>
+			Fiber:
+			<input type="number" name="Fiber" ng-model="component.NutritionValue.Fiber" required />
+		</label>
+		<br />
+
+		<label>
+			Kcal:
+			<input type="number" name="Kcal" ng-model="component.NutritionValue.Kcal" required />
+		</label>
+		<br/>
+		<br/>
+
+		<input type="submit" ng-click="updateComponent(component)" value="Save" />
+	</form>
+</div>
