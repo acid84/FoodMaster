@@ -4,10 +4,10 @@
 	<table ng-table="tableParams" class="table" show-filter="true">
 		<tr ng-repeat="component in $data">
 			<td title="'Name'" filter="{Name: 'text'}" sortable="'Name'" >{{ component.Name }}</td>
-			<td title="'Carbs'" sortable="'NutritionValue.Carbs'" >{{ component.NutritionValue.Carbs }}</td>
-			<td title="'Fat'" sortable="'NutritionValue.Fat'" >{{ component.NutritionValue.Fat }}</td>
-			<td title="'Fiber'" sortable="'NutritionValue.Fiber'">{{ component.NutritionValue.Fiber }}</td>
-			<td title="'Kcal'" sortable="'NutritionValue.Kcal'">{{ component.NutritionValue.Kcal }}</td>
+			<td title="'Carbs'" filter="{Carbs: 'number'}" sortable="'Carbs'" >{{ component.Carbs }}</td>
+			<td title="'Fat'" filter="{Fat: 'number'}" sortable="'NutritionValue.Fat'" >{{ component.Fat }}</td>
+			<td title="'Fiber'" filter="{Fiber: 'number'}" sortable="'NutritionValue.Fiber'">{{ component.Fiber }}</td>
+			<td title="'Kcal'" filter="{Kcal: 'number'}" sortable="'NutritionValue.Kcal'">{{ component.Kcal }}</td>
 			<td ><li><a href="#/editcomponent/{{component.Name}}">Edit</a></li></td>
 			<td ><li><a href ng-click="deleteComponent(component);">Delete</a></li></td>
 		</tr>
