@@ -2,37 +2,55 @@
 	<h2>{{ HeaderText }}</h2>
 
 	<form>
-		<label>
-			Name:
-			<input type="text" name="Name" ng-model="component.Name" required/>
-		</label>
-		<br/>
+		<table>
+			<tr>
+				<td>
+					Name:
+				</td>
+				<td>
+					<input type="text" name="Name" ng-model="component.Name" required />
+				</td>
+			</tr>
 
-		<label>
-			Carbs:
-			<input type="number" name="Carbs" ng-model="component.NutritionValue.Carbs" required />
-		</label>
-		<br/>
+			<tr>
+				<td>
+					Carbs:
+				</td>
+				<td>
+					<input type="number" name="Carbs" ng-model="component.NutritionValue.Carbs" required />
+				</td>
+			</tr>
 
-		<label>
-			Fat:
-			<input type="number" name="Fat" ng-model="component.NutritionValue.Fat" required />
-		</label>
-		<br/>
+			<tr>
+				<td>
+					Fat:
+				</td>
+				<td>
+					<input type="number" name="Fat" ng-model="component.NutritionValue.Fat" required />
+				</td>
+			</tr>
 
-		<label>
-			Fiber:
-			<input type="number" name="Fiber" ng-model="component.NutritionValue.Fiber" required />
-		</label>
+			<tr>
+				<td>
+					Fiber:
+				</td>
+				<td>
+					<input type="number" name="Fiber" ng-model="component.NutritionValue.Fiber" required />
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Kcal:
+				</td>
+				<td>
+					<input type="number" name="Kcal" ng-model="component.NutritionValue.Kcal" required />
+				</td>
+			</tr>
+		</table>
+				
 		<br />
-
-		<label>
-			Kcal:
-			<input type="number" name="Kcal" ng-model="component.NutritionValue.Kcal" required />
-		</label>
-		<br/>
-		<br/>
-
+		<br />
 		<input type="submit" ng-click="updateComponent(component)" value="Save" />
-	</form>
+</form>
 </div>
