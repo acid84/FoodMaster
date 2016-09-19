@@ -16,6 +16,10 @@ app.controller(VIEW_COMPONENTS_CONTROLLER, [
 				});
 		}
 
+		$scope.createNew = function () {
+			$location.path("addcomponent");
+		}
+
 		function CreateComponentViewModel(component) {
 			return {
 				Name: component.Name,
