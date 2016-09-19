@@ -1,7 +1,7 @@
 ﻿var app = angular.module(APP_NAME);
 
 app.controller(VIEW_COMPONENTS_CONTROLLER, [
-	'$scope', '$http', '$location', 'NgTableParams', function ($scope, $http, $location, NgTableParams) {
+	'$scope', '$http', '$location', '$window', 'NgTableParams', function ($scope, $http, $location, $window, NgTableParams) {
 		$scope.components = null
 
 		$scope.getComponents = function () {
@@ -30,10 +30,15 @@ app.controller(VIEW_COMPONENTS_CONTROLLER, [
 			}
 		}
 		$scope.deleteComponent = function (component) {
-			$http.delete("http://localhost:9000/api/components?name=" + component.Name)
-				.success(function() {
+			var deleteMessage = "Do you want to delete " + component.Name + "?";
+			var sure = $window.confirm(deleteMessage);
+
+			if (sure) {
+				$http.delete("http://localhost:9000/api/components?name=" + component.Name)
+				.success(function () {
 					refreshComponents();
 				});
+			}
 		}
 
 		function refreshComponents() {

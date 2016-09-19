@@ -8,8 +8,16 @@
 			<td title="'Fat'" filter="{Fat: 'number'}" sortable="'NutritionValue.Fat'" >{{ component.Fat }}</td>
 			<td title="'Fiber'" filter="{Fiber: 'number'}" sortable="'NutritionValue.Fiber'">{{ component.Fiber }}</td>
 			<td title="'Kcal'" filter="{Kcal: 'number'}" sortable="'NutritionValue.Kcal'">{{ component.Kcal }}</td>
-			<td ><li><a href="#/editcomponent/{{component.Name}}">Edit</a></li></td>
-			<td ><li><a href ng-click="deleteComponent(component);">Delete</a></li></td>
+			<td >
+				<a href="#/editcomponent/{{component.Name}}">
+				  	<img src="img/editButton.png" height="15" width="15" title="Edit">
+				</a>
+			</td>
+			<td >
+				<a href ng-click="deleteComponent(component);">
+					<img src="img/deleteButton.png" height="15" width="15" title="Delete">
+				</a>
+			</td>
 		</tr>
 	</table>
 
