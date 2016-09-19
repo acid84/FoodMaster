@@ -102,6 +102,7 @@
     <Content Include="app\controllers\editComponentController.js" />
     <Content Include="app\controllers\viewComponentsController.js" />
     <Content Include="app\controllers\viewDishesController.js" />
+    <Content Include="img\addButton.png" />
     <Content Include="img\deleteButton.png" />
     <Content Include="img\editButton.png" />
     <Content Include="app\partials\addDish.html" />
