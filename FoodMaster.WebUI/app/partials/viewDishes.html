@@ -1,14 +1,17 @@
 ﻿<div>
-	<h2>View dishes.</h2><br/>
+	<h2>View dishes.</h2><br />
 
-	<table border="1">
-		<tr>
-			<td>Name</td>
-		</tr>
-		<tr ng-repeat="dish in dishes">
-			<td>{{ dish.Name }}</td>
-			<!--<td><li><a href="not working">Edit</a></li></td>-->
-			<td><li><a href ng-click="deleteDish(dish);">Delete</a></li></td>
+	<table ng-table="tableParams" class="table" show-filter="true">
+		<tr ng-repeat="dish in $data">
+			<td title="'Name'" filter="{Name: 'text'}" sortable="'Name'">{{ dish.Name }}</td>
+			<td>
+				<a href ng-click="deleteDish(dish);">
+					<img src="img/deleteButton.png" height="15" width="15" title="Delete">
+				</a>
+			</td>
 		</tr>
 	</table>
+	<a href="#/adddishes">
+		<img src="img/addButton.png" height="25" width="25" title="Add new dish">
+	</a>
 </div>
