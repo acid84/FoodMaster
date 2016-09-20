@@ -97,7 +97,6 @@
     <Content Include="app\appConfig.js" />
     <Content Include="app\Constants.js" />
     <Content Include="app\controllers\aboutController.js" />
-    <Content Include="app\controllers\addComponentController.js" />
     <Content Include="app\controllers\addDishController.js" />
     <Content Include="app\controllers\editComponentController.js" />
     <Content Include="app\controllers\viewComponentsController.js" />

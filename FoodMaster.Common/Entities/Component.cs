@@ -12,7 +12,11 @@ namespace FoodMaster.Common.Entities
     {
         [DataMember]
         public string Name { get; set; }
-        [DataMember]
+
+		[DataMember]
+		public string Type { get; set; }
+
+		[DataMember]
         public Nutrition NutritionValue { get; set; }
     }
 

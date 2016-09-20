@@ -12,7 +12,7 @@ var EDIT_COMPONENT_CONTROLLER = "editComponentController";
 var EDIT_COMPONENT_VIEW = "app/partials/editComponent.html";
 var EDIT_COMPONENT_ROUTE = "/editcomponent/:id";
 
-var ADD_COMPONENT_CONTROLLER = "addComponentController";
+var ADD_COMPONENT_CONTROLLER = "editComponentController";
 var ADD_COMPONENT_VIEW = "app/partials/editComponent.html";
 var ADD_COMPONENT_ROUTE = "/addcomponent";
 
