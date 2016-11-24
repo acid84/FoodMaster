@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace FoodMaster.Common.Entities
 {
-    [DataContract]
+	[DataContract]
     public class Component
     {
         [DataMember]
@@ -20,5 +15,23 @@ namespace FoodMaster.Common.Entities
         public Nutrition NutritionValue { get; set; }
     }
 
+	public class DishComponent : Component
+	{
+		public int Ammount { get; set; }
+
+		public Nutrition DishComponentNutritionValue
+		{
+			get
+			{
+				Nutrition calculatedNutrition= new Nutrition();
+				calculatedNutrition.Carbs = NutritionValue.Carbs * Ammount;
+				calculatedNutrition.Fat = NutritionValue.Fat * Ammount;
+				calculatedNutrition.Fiber = NutritionValue.Fiber;
+				calculatedNutrition.Kcal = NutritionValue.Kcal;
+
+				return calculatedNutrition;
+			}
+		}
+	}
 
 }

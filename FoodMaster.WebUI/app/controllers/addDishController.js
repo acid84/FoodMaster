@@ -2,7 +2,7 @@
 
 app.controller(ADD_DISH_CONTROLLER, ['$scope', '$http', '$location', function ($scope, $http, $location) {
 	$scope.components = [];
-	
+	$scope.selectedAmmount = 0;
 	$scope.court = {};
 	$scope.court.components = [];
 
@@ -16,6 +16,7 @@ app.controller(ADD_DISH_CONTROLLER, ['$scope', '$http', '$location', function ($
 	$scope.addComponent = function (component) {
 		// For some reason we get a json object back from selected item. We need to convert it to a real object.
 		var componentObject = JSON.parse(component);
+		componentObject.Ammount = $scope.selectedAmmount;
 		$scope.court.components.push(componentObject);
 	}
 
