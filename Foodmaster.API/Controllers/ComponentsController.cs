@@ -7,9 +7,10 @@ using FoodMaster.Common.Entities;
 using FoodMaster.Model;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FoodMaster.WebAPI
+namespace Foodmaster.API.Controllers
 {
-	public class ComponentsController : ControllerBase
+    [Route("api/[controller]")]
+    public class ComponentsController : ControllerBase
     {
 	    private readonly ComponentsModel _model;
 	    public ComponentsController()
@@ -18,6 +19,7 @@ namespace FoodMaster.WebAPI
 	    }
 
         // GET api/values 
+        [HttpGet]
         public IEnumerable<Component> Get()
         {
 	        try
@@ -34,66 +36,69 @@ namespace FoodMaster.WebAPI
         }
 
         // GET api/values/5 
+        [HttpGet("{name}")]
         public Component Get(string name)
         {
-	        try
-	        {
-		        var componentTask = _model.GetComponentAsync(name);
-		        componentTask.Wait();
-		        return componentTask.Result;
-	        }
-	        catch (Exception)
-	        {
-		        
-		        throw;
-	        }
+            try
+            {
+                var componentTask = _model.GetComponentAsync(name);
+                componentTask.Wait();
+                return componentTask.Result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        // POST api/values 
+        [HttpPost]
         public HttpResponseMessage Post([FromBody]Component component)
         {
-	        try
-	        {
-		        var task =_model.AddComponentAsync(component);
-		        task.Wait();
+            try
+            {
+                var task = _model.AddComponentAsync(component);
+                task.Wait();
 
-				return new HttpResponseMessage(HttpStatusCode.Created);
-	        }
-	        catch (Exception)
-	        {
-		        throw;
-	        }
+                return new HttpResponseMessage(HttpStatusCode.Created);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-		public HttpResponseMessage Put(string name,[FromBody] Component component)
-		{
-			try
-			{
-				var task = _model.UpdateComponentAsync(name, component);
-				task.Wait();
+        [HttpPut("{name}")]
+        public HttpResponseMessage Put(string name, [FromBody] Component component)
+        {
+            try
+            {
+                var task = _model.UpdateComponentAsync(name, component);
+                task.Wait();
 
-				return new HttpResponseMessage(HttpStatusCode.Created);
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-		}
+                return new HttpResponseMessage(HttpStatusCode.Created);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
+        [HttpDelete("{name}")]
         // DELETE api/values/5 
         public HttpResponseMessage Delete(string name)
         {
-	        try
-	        {
-		        var task = _model.DeleteComponent(name);
-		        task.Wait();
+            try
+            {
+                var task = _model.DeleteComponent(name);
+                task.Wait();
 
-				return new HttpResponseMessage(HttpStatusCode.OK);
-			}
-			catch (Exception)
-	        {
-		        throw;
-	        }
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
