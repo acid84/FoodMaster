@@ -1,5 +1,4 @@
 ﻿using System;
-using FoodMaster.WebApi;
 using Microsoft.Owin.Hosting;
 
 namespace FoodMaster.WebAPI.Runner

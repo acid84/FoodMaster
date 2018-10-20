@@ -1,8 +1,8 @@
-﻿using Owin;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Cors;
+using Owin;
 
-namespace FoodMaster.WebApi
+namespace FoodMaster.WebAPI
 {
     public class Startup
     {

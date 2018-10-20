@@ -89,16 +89,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FoodMaster.Common\FoodMaster.Common.csproj">
-      <Project>{b4b97daa-7c4b-41bf-8564-8c63ae7439ad}</Project>
-      <Name>FoodMaster.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FoodMaster.Model\FoodMaster.Model.csproj">
-      <Project>{FC5B8415-9BB2-4C75-BC5A-CF1FC7118E33}</Project>
-      <Name>FoodMaster.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
