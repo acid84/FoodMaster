@@ -4,26 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using FoodMaster.Common.Entities;
 using FoodMaster.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Newtonsoft.Json;
-using NUnit.Framework;
 
 namespace FoodMaster.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class ComponentsModelTests
     {
         private Mock<IStorage<Component>> _storageMock;
         private ComponentsModel _model;
 
-        [SetUp]
-        public void Init()
+        public ComponentsModelTests()
         {
             _storageMock = new Mock<IStorage<Component>>();
             _model = new ComponentsModel(_storageMock.Object);
         }
 
-        [Test]
+        [TestMethod]
         public void AddComponentStoresComponent_Test()
         {
             Task task = _model.AddComponentAsync(CreateComponent());
@@ -31,7 +30,7 @@ namespace FoodMaster.UnitTests
             _storageMock.Verify(x => x.Store(It.IsAny<IEnumerable<Component>>()), Times.Exactly(1));
         }
 
-        [Test]
+        [TestMethod]
         public async Task GetAllComponentReturnsAllItems_Test()
         {
             var createdComponents = new List<Component> {CreateComponent(), CreateComponent(), CreateComponent()};
@@ -43,7 +42,7 @@ namespace FoodMaster.UnitTests
             Assert.AreEqual(createdComponents, components);
         }
 
-	    [Test]
+	    [TestMethod]
 	    public void Test()
 	    {
 		    var comp = CreateComponent();
