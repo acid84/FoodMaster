@@ -1,0 +1,26 @@
+﻿<div>
+	<h2>Components</h2>
+
+	<table ng-table="tableParams" class="table" show-filter="true">
+		<tr ng-repeat="component in $data">
+			<td title="'Name'" filter="{Name: 'text'}" sortable="'Name'">{{ component.Name }}</td>
+			<td title="'Carbs'" filter="{Carbs: 'number'}" sortable="'Carbs'">{{ component.Carbs }}</td>
+			<td title="'Fat'" filter="{Fat: 'number'}" sortable="'NutritionValue.Fat'">{{ component.Fat }}</td>
+			<td title="'Fiber'" filter="{Fiber: 'number'}" sortable="'NutritionValue.Fiber'">{{ component.Fiber }}</td>
+			<td title="'Kcal'" filter="{Kcal: 'number'}" sortable="'NutritionValue.Kcal'">{{ component.Kcal }}</td>
+			<td>
+				<a href="#/editcomponent/{{component.Name}}">
+					<img src="img/editButton.png" height="15" width="15" title="Edit">
+				</a>
+			</td>
+			<td>
+				<a href ng-click="deleteComponent(component);">
+					<img src="img/deleteButton.png" height="15" width="15" title="Delete">
+				</a>
+			</td>
+		</tr>
+	</table>
+	<a href="#/addcomponent">
+		<img src="img/addButton.png" height="25" width="25" title="Add new component">
+	</a>
+</div>
